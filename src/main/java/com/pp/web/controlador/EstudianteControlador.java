@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.pp.web.entidad.Estudiante;
 import com.pp.web.servicio.EstudianteServicio;
@@ -28,4 +30,12 @@ public class EstudianteControlador {
 		return "crear_estudiante";
 		
 	}
+	
+	
+	@PostMapping("/estudiantes")
+	public String guardarEstudiante(@ModelAttribute("estudiante")Estudiante estudiante) {
+		servicio.guardarEstudiante(estudiante);
+		return "redirect:/estudiantes";
+	}
+	
 }

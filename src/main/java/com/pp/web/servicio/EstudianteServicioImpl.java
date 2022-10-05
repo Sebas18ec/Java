@@ -22,9 +22,10 @@ public class EstudianteServicioImpl implements EstudianteServicio{
 	}
 
 	@Override
-	public Estudiante guardarEstudiante() {
-		// TODO Auto-generated method stub
-		return null;
+	public Estudiante guardarEstudiante(Estudiante estudiante) {
+		
+		return repositorio.save(estudiante);
 	}
 
+	
 }
