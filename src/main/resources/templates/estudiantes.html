@@ -29,12 +29,20 @@
 	
 	</nav>
 
+	<br>
 	<div class="container">
 
 		<div class="row">
 			<h1>Lista de Estudiantes</h1>
 		</div>
-
+		
+		<br>
+		<div class="row">
+			<div class="col-lg-3">
+				<a th:href="@{/estudiantes/nuevo}" class="btn btn-primary btn-sm-mb3">Añadir Estudiante</a>
+			</div>
+		</div>
+		<br>
 		<table class="table table-striped">
 
 
@@ -44,6 +52,7 @@
 					<th>Nombre</th>
 					<th>Apellido</th>
 					<th>Email</th>
+					<th>Opciones</th>
 				
 				
 				</tr>
@@ -54,6 +63,10 @@
 					<td th:text="${estudiante.nombre}">Nombre</td>
 					<td th:text="${estudiante.apellido}">Apellido</td>
 					<td th:text="${estudiante.email}"> Email</td>
+					<td>
+						<a th:href="@{/estudiantes/editar/{id}(id=${estudiante.id})}" class="btn btn-outline-secondary">Editar</a>
+						<a th:href="@{/estudiantes/{id}(id=${estudiante.id})}" class="btn btn-outline-danger">Eliminar</a>
+					</td>
 				
 				
 				</tr>
